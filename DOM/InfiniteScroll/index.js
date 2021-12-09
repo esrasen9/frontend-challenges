@@ -22,12 +22,8 @@ const getTestimonials = () => {
           fragment.appendChild(createTestimonialElement(message));
         });
         testimonialContainer.appendChild(fragment);
-        if(hasNext){
-          after =  testimonials[testimonials.length-1].id;
-        }
-        else {
-          testimonialContainer.removeEventListener("scroll",handleScroll);
-        }
+        (hasNext) ? after =  testimonials[testimonials.length-1].id
+                  : testimonialContainer.removeEventListener("scroll",handleScroll);
         canFetchTestimonials = true;
       })
       .catch(err =>console.error(err));
