@@ -1,0 +1,50 @@
+#stopwatch {
+    display: grid;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    grid-column-gap: 12px;
+    align-content: center;
+    justify-content: center;
+    grid-template-areas:
+    "header header header"
+    "timer timer timer"
+    "start stop reset";
+}
+
+h1 {
+    margin: -20px 0 0 0;
+    grid-area: header;
+}
+
+button {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+#start-button {
+    grid-area: start;
+}
+
+#stop-button {
+    grid-area: stop;
+}
+
+#reset-button {
+    grid-area: reset;
+}
+
+#timer {
+    margin: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: monospace;
+    grid-area: timer;
+}
